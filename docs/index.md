@@ -1,6 +1,6 @@
-# Bienvenue sur mon site DevOps
+# Bienvenue
 
-Vous trouverez sur ce site de la documentation sur le metier est ce que fait un devops.
+Vous trouverez sur ce site de la documentation sur le devops.
 
 ## Cours
 
@@ -9,6 +9,3 @@ Vous trouverez sur ce site de la documentation sur le metier est ce que fait un 
 - Github Action
 - AWS
 - Autres
-
-
-
