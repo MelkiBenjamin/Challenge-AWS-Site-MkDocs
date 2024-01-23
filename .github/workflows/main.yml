@@ -19,8 +19,14 @@ jobs:
         - name: install mkdocs
           run: pip install mkdocs
 
+        - name: ls
+          run: ls
+
         - name: build test
           run: mkdocs build
+
+        - name: ls
+          run: ls
 
         - name: artifact upload
           uses: actions/upload-artifact@v4
@@ -36,6 +42,9 @@ jobs:
           with: 
             name: site
 
+        - name: ls
+          run: ls
+  
         - name: deploiement
           run: aws s3 sync site/ s3://benjaminmelki-test/
 
