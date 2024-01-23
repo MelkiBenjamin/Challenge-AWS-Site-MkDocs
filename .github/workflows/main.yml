@@ -11,22 +11,22 @@ jobs:
         - name: date
           run: date
 
-        - name: install nodejs
-          uses: actions/setup-node@v4
+        - name: install python3
+          uses: actions/setup-python@v5
           with:
-            node-version: 20.11
+            python-version: '3.11'
 
         - name: install docusaurus
-          run: npm install docusaurus
+          run: pip install docusaurus
 
         - name: build test
-          run: npm run build
+          run: mkdocs build
 
         - name: artifact upload
           uses: actions/upload-artifact@v4
           with:
             name: site
-            path: build/
+            path: site/
 
     deploiement:
         runs-on: self-hosted
