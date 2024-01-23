@@ -40,5 +40,5 @@ jobs:
           run: aws s3 sync build/ s3://benjaminmelki-test/
 
         - name: site adresse
-          run: echo http://benjaminmelki-test.s3-website.eu-west-3.amazonaws.com
+          run: echo site http://benjaminmelki-test.s3-website.eu-west-3.amazonaws.com
         needs: build
