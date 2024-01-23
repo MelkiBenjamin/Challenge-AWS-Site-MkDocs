@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
         steps:
         - name: checkout
           uses: actions/checkout@v4
@@ -28,24 +28,13 @@ jobs:
         - name: ls debug
           run: ls
 
-        - name: artifact upload
-          uses: actions/upload-artifact@v4
-          with:
-            name: site
-            path: site
-
     deploiement:
         runs-on: self-hosted
         steps:
-        - name: artifact download
-          uses: actions/download-artifact@v4
-          with: 
-            name: site
-
         - name: ls
           run: ls
   
-        - name: deploiement
+        - name: deploiement test
           run: aws s3 sync site/ s3://benjaminmelki-test/
 
         - name: site adresse
