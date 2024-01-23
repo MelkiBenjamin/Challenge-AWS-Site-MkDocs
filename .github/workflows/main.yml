@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
     build:
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
         steps:
         - name: checkout
           uses: actions/checkout@v4
@@ -17,14 +17,25 @@ jobs:
             node-version: 20.11
 
         - name: install docusaurus
-          run: npm install 
+          run: npm install docusaurus
 
         - name: build test
           run: npm run build
 
+        - name: artifact upload
+          uses: actions/upload-artifact@v4
+          with:
+            name: site
+            path: build/
+
     deploiement:
         runs-on: self-hosted
         steps:
+        - name: artifact download
+          uses: actions/download-artifact@v4
+          with: 
+            name: site
+
         - name: deploiement
           run: aws s3 sync s3://benjaminmelki-test/
 
