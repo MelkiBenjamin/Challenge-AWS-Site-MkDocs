@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Comprendre et utiliser Ansible
+# Ansible
 
 Etapes pour utiliser ansible: 
 1) creer conteneur serveur-web (nom_conteneur)
