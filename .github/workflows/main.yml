@@ -25,7 +25,7 @@ jobs:
         - name: build test
           run: mkdocs build
 
-        - name: ls
+        - name: ls debug
           run: ls
 
         - name: artifact upload
