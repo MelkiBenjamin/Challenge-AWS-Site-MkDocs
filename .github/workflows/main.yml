@@ -16,8 +16,8 @@ jobs:
           with:
             python-version: '3.11'
 
-        - name: install docusaurus
-          run: pip install docusaurus
+        - name: install mkdocs
+          run: pip install mkdocs
 
         - name: build test
           run: mkdocs build
