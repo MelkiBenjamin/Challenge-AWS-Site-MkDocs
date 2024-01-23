@@ -17,7 +17,7 @@ jobs:
             node-version: 20.11
 
         - name: install docusaurus
-          run: npm install -r requirements.txt
+          run: npm install 
 
         - name: build test
           run: npm run build
