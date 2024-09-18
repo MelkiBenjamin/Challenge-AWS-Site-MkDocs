@@ -1,5 +1,7 @@
 name: build et deploiement site aws
-on: [push, workflow_dispatch]
+on: 
+#  push:
+  workflow_dispatch:
 
 jobs:
     build:
